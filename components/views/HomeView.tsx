@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { AppView, PastOrder, UserProfile } from '@/types/ubi';
 import {
   BicycleCourierIllustration,
@@ -305,6 +306,26 @@ export const HomeView: React.FC<HomeViewProps> = ({
               {order.id}
             </button>
           ))}
+        </div>
+      </motion.section>
+
+      {/* TICARMELO MOCKUP SHOWCASE (Placed between tracking and footer) */}
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-40px' }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        className="max-w-md mx-auto px-4 sm:px-6 w-full mb-16 flex flex-col items-center justify-center text-center"
+      >
+        <div className="relative w-full max-w-[280px] sm:max-w-[320px] transition-transform duration-300 hover:scale-[1.02] flex items-center justify-center">
+          <Image
+            src="/homepage/mockupticarmelo.png"
+            alt="UBI App Mockup TICARMELO"
+            width={320}
+            height={400}
+            className="w-auto h-auto max-h-[380px] object-contain drop-shadow-xl"
+            priority={false}
+          />
         </div>
       </motion.section>
 
