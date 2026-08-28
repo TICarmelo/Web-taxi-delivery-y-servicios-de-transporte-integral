@@ -1,15 +1,19 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
+import Image from 'next/image';
 import { UbiLogo } from '@/components/common/UbiLogo';
 import { AppView } from '@/types/ubi';
-import { ShieldCheck, MapPin, Phone, Mail, Heart } from 'lucide-react';
+import { ShieldCheck, MapPin, Phone, Mail, Heart, Tag } from 'lucide-react';
+import { PricingModal } from '@/components/common/PricingModal';
 
 interface FooterProps {
   onNavigate: (view: AppView) => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
+  const [isPricingModalOpen, setIsPricingModalOpen] = useState(false);
+
   return (
     <footer className="w-full bg-[#081a30] text-slate-300 pt-12 pb-8 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -140,14 +144,51 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           </button>
         </div>
 
-        {/* Bottom copyright */}
-        <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+        {/* Bottom Bar: Copyright & PRECIO WEB Action Button */}
+        <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>© {new Date().getFullYear()} TICARMELO. Todos los derechos reservados.</p>
-          <p className="flex items-center gap-1">
+
+          {/* PRECIO WEB Button with TICARMELO Logo */}
+          <button
+            onClick={() => setIsPricingModalOpen(true)}
+            id="btn-footer-precio-web"
+            className="inline-flex items-center gap-2.5 px-4 py-2 bg-gradient-to-r from-[#0c2340] to-[#163860] hover:from-[#133358] hover:to-[#1e497a] text-white border border-teal-400/50 hover:border-teal-300 rounded-xl text-xs font-bold transition shadow-md hover:shadow-teal-500/20 cursor-pointer group"
+          >
+            {/* Logo Image */}
+            <div className="w-5 h-5 rounded-md overflow-hidden bg-white/10 flex items-center justify-center relative flex-shrink-0 border border-teal-400/30">
+              <Image
+                src="/ticarmelo/logo.png"
+                alt="TICARMELO"
+                width={20}
+                height={20}
+                className="object-contain"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = '/logo.png';
+                }}
+              />
+            </div>
+            
+            <span className="tracking-wide text-teal-300 group-hover:text-white transition">
+              PRECIO WEB
+            </span>
+
+            <span className="text-[9px] bg-teal-400/20 text-teal-300 px-2 py-0.5 rounded-full font-extrabold border border-teal-400/40">
+              Promo 30 Días
+            </span>
+          </button>
+
+          <p className="flex items-center gap-1 text-[11px] text-slate-400">
             Hecho para conectar tu ciudad con calidad y confianza
           </p>
         </div>
       </div>
+
+      {/* Commercial Pricing Modal */}
+      <PricingModal
+        isOpen={isPricingModalOpen}
+        onClose={() => setIsPricingModalOpen(false)}
+      />
     </footer>
   );
 };
