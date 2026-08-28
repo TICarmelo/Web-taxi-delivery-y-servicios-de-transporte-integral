@@ -4,15 +4,8 @@ import React from 'react';
 import Image from 'next/image';
 import { 
   X, 
-  Check, 
-  Sparkles, 
-  ShieldCheck, 
-  Layers, 
-  Smartphone, 
-  Sliders, 
   MessageSquare, 
   ExternalLink,
-  Zap,
   Tag,
   ArrowRight
 } from 'lucide-react';
@@ -100,53 +93,42 @@ export const PricingModal: React.FC<PricingModalProps> = ({ isOpen, onClose }) =
 
           {/* Core Features & Natural Capabilities List */}
           <div className="bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-5 space-y-3">
-            <div className="flex items-center gap-2 text-xs font-bold text-teal-300 uppercase tracking-wider">
-              <Sparkles size={14} />
-              <span>Características y Alcance de la Plataforma</span>
-            </div>
+            <h3 className="text-xs font-bold text-teal-300 uppercase tracking-wider">
+              Características y Alcance de la Plataforma
+            </h3>
 
-            <ul className="space-y-2.5 text-xs text-slate-200">
+            <ul className="space-y-3 text-xs text-slate-200">
               <li className="flex items-start gap-2.5">
-                <div className="w-5 h-5 rounded-md bg-teal-400/20 text-teal-300 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <Smartphone size={12} />
-                </div>
-                <span>
+                <span className="w-1.5 h-1.5 rounded-full bg-teal-400 mt-1.5 flex-shrink-0" />
+                <span className="leading-relaxed">
                   <strong className="text-white">Portal de Clientes Autónomo:</strong> Cotizador de carreras, shopper y encomiendas en tiempo real, mapas vectoriales interactivos y pasarelas de pago directo.
                 </span>
               </li>
 
               <li className="flex items-start gap-2.5">
-                <div className="w-5 h-5 rounded-md bg-teal-400/20 text-teal-300 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <Zap size={12} />
-                </div>
-                <span>
+                <span className="w-1.5 h-1.5 rounded-full bg-teal-400 mt-1.5 flex-shrink-0" />
+                <span className="leading-relaxed">
                   <strong className="text-white">App de Conductor / Repartidor:</strong> Cola de asignaciones activas, llamadas directas, billetera de saldo, gráficos de rendimiento semanal y gestión de retiros.
                 </span>
               </li>
 
               <li className="flex items-start gap-2.5">
-                <div className="w-5 h-5 rounded-md bg-teal-400/20 text-teal-300 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <ShieldCheck size={12} />
-                </div>
-                <span>
+                <span className="w-1.5 h-1.5 rounded-full bg-teal-400 mt-1.5 flex-shrink-0" />
+                <span className="leading-relaxed">
                   <strong className="text-white">Mando Central & Auditoría:</strong> Supervisión de flotas en vivo, control de estados (En Ruta/Offline), reportes contables, alertas de flujo crítico y trazabilidad.
                 </span>
               </li>
 
               <li className="flex items-start gap-2.5">
-                <div className="w-5 h-5 rounded-md bg-teal-400/20 text-teal-300 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <Sliders size={12} />
-                </div>
-                <span>
+                <span className="w-1.5 h-1.5 rounded-full bg-teal-400 mt-1.5 flex-shrink-0" />
+                <span className="leading-relaxed">
                   <strong className="text-white">Panel de Gestión Interna de Contenido (CMS):</strong> Área administrativa para que el dueño actualice textos, imágenes, tarifas zonales y banners sin depender del programador.
                 </span>
               </li>
 
               <li className="flex items-start gap-2.5">
-                <div className="w-5 h-5 rounded-md bg-teal-400/20 text-teal-300 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <Layers size={12} />
-                </div>
-                <span>
+                <span className="w-1.5 h-1.5 rounded-full bg-teal-400 mt-1.5 flex-shrink-0" />
+                <span className="leading-relaxed">
                   <strong className="text-white">Infraestructura Nube & Soporte:</strong> Servidores de alta disponibilidad, copias de seguridad diarias, certificados SSL y soporte de TICARMELO.
                 </span>
               </li>
