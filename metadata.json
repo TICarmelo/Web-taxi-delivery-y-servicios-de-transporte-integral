@@ -1,0 +1,6 @@
+{
+  "name": "UBI",
+  "description": "UBI: Tu Ciudad, Tus Servicios, Simplificados. Plataforma integral de Delivery, Compras Asistidas y Transporte Ride-Hailing.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
