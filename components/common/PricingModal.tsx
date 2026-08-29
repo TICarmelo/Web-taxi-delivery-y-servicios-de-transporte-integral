@@ -162,7 +162,7 @@ export const PricingModal: React.FC<PricingModalProps> = ({ isOpen, onClose }) =
                 </div>
                 <div className="text-right">
                   <span className="text-xs text-slate-400 line-through mr-1.5">$1,800 USD</span>
-                  <span className="text-base font-extrabold text-[#2ec4b6]">$650 USD</span>
+                  <span className="text-base font-extrabold text-[#2ec4b6]">$720 USD</span>
                 </div>
               </div>
 
